@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="content-language" content="en" />
+		<meta http-equiv="Content-Type" content="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+	</head>
+	<body>
+	<script type="text/javascript">
+		function frequency (str) {
+			var allowed = 'abcdefghijklmnopqrstuvwxyz',
+				myStr = str.toLowerCase(),
+				multip = 100 / myStr.length
+				freq = {};
+			for (var i = allowed.length - 1; i >= 0; i--) {
+				freq[allowed[i]] = ((myStr.split(allowed[i]).length - 1) * multip);
+			};
+			return freq;
+		}
+
+		console.time('t');
+		console.log(frequency('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce est nunc, suscipit eget dignissim sed, iaculis sed dolor. Curabitur et rhoncus est. Aenean eget turpis aliquam, ullamcorper magna ut, mollis mi. Aliquam accumsan massa ac lobortis ultrices. Vestibulum nec ipsum sem. Duis convallis at mi a suscipit. Sed eleifend, mi non tempus aliquam, nibh risus vestibulum arcu, quis tempor arcu nisl in dui. Ut sapien purus, congue non tincidunt vel, imperdiet eget risus. Fusce ut malesuada eros. Nullam accumsan, leo ac pharetra hendrerit, mauris est ornare tortor, scelerisque accumsan massa nulla id nulla. Aenean auctor mi id ultricies convallis. Fusce varius vel arcu vitae aliquam.'));
+		console.timeEnd('t');
+
+	</script>
+	</body>
+</html>
